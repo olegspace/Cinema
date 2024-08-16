@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Cinema.CenterPricePolicy">
+    <Position X="5.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>CenterPricePolicy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Cinema.ChooseFilmController">
+    <Position X="4" Y="5.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AQIAAAAAAAABEAAAAAAAAACAAAAAAQQAQAACAAAAAAA=</HashCode>
+      <FileName>ChooseFilmController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cinema.ChooseFilmUsecase">
+    <Position X="9.25" Y="0.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAEAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>ChooseFilmUsecase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cinema.FileFilmSessionStorage" Collapsed="true">
+    <Position X="13" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIAAAAAAAAAMAAAAIAAAAAAAAAAAUAAAIAAAAIAAJA=</HashCode>
+      <FileName>FileFilmSessionStorage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Cinema.FilmSession">
+    <Position X="12" Y="5.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>BAACAAUAIAAAACAGgAEAAAAAAAAAACABaAAAAUgAggA=</HashCode>
+      <FileName>FilmSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FilmSessionController" Collapsed="true">
+    <Position X="7.75" Y="7.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAABAIAAAASEIAAAEBAAAAAACAgAIAAAAAAABA=</HashCode>
+      <FileName>FilmSessionController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Cinema.Hall">
+    <Position X="13.75" Y="5.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AQAAAAAABAAAAAQAQIAAAEQAAAAEQAAAAEAAAAAAABA=</HashCode>
+      <FileName>Hall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cinema.InMemoryFilmSessionStorage" Collapsed="true">
+    <Position X="13" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIAAAAAAAAAMAAAAIAAAAAAAAAAAUAAAAAAAAAAAJA=</HashCode>
+      <FileName>InMemoryFilmSessionStorage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Cinema.LinearPricePolicy">
+    <Position X="7.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>LinearPricePolicy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Cinema.PlaceOfCinemaHall">
+    <Position X="10.25" Y="5.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAEAgAAAAAAAAAAIAAAACAAAIQAAAAAAAAAAAAAlA=</HashCode>
+      <FileName>PlaceOfCinemaHall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="IFilmSessionController">
+    <Position X="7.75" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAEIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IFilmSessionController.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IFilmSessionStorage">
+    <Position X="11.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIAAAAAAAAAEAAAAIAAAAAAAAAAAQAAAAAAAAAAAJA=</HashCode>
+      <FileName>IFilmSessionStorage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Cinema.PricePolicy">
+    <Position X="6.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>PricePolicy.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
