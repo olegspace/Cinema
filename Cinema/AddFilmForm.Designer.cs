@@ -28,78 +28,85 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            label1 = new Label();
-            label2 = new Label();
-            filmNameTextBox = new TextBox();
-            durationMaskedTextBox = new MaskedTextBox();
-            addFilmButton = new Button();
-            errorProvider = new ErrorProvider(components);
-            ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
-            SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.filmNameTextBox = new System.Windows.Forms.TextBox();
+            this.durationMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.addFilmButton = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(160, 23);
-            label1.Name = "label1";
-            label1.Size = new Size(157, 25);
-            label1.TabIndex = 0;
-            label1.Text = "Название фильма";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(112, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Название фильма";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(12, 69);
-            label2.Name = "label2";
-            label2.Size = new Size(311, 25);
-            label2.TabIndex = 1;
-            label2.Text = "Продолжительность фильма (чч:мм)";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 41);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(214, 15);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Продолжительность фильма (чч:мм)";
             // 
             // filmNameTextBox
             // 
-            filmNameTextBox.Location = new Point(323, 17);
-            filmNameTextBox.Name = "filmNameTextBox";
-            filmNameTextBox.Size = new Size(327, 31);
-            filmNameTextBox.TabIndex = 2;
+            this.filmNameTextBox.Location = new System.Drawing.Point(226, 10);
+            this.filmNameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.filmNameTextBox.Name = "filmNameTextBox";
+            this.filmNameTextBox.Size = new System.Drawing.Size(230, 23);
+            this.filmNameTextBox.TabIndex = 2;
             // 
             // durationMaskedTextBox
             // 
-            durationMaskedTextBox.Location = new Point(323, 63);
-            durationMaskedTextBox.Mask = "00:00";
-            durationMaskedTextBox.Name = "durationMaskedTextBox";
-            durationMaskedTextBox.Size = new Size(190, 31);
-            durationMaskedTextBox.TabIndex = 3;
+            this.durationMaskedTextBox.Location = new System.Drawing.Point(226, 38);
+            this.durationMaskedTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.durationMaskedTextBox.Mask = "00:00";
+            this.durationMaskedTextBox.Name = "durationMaskedTextBox";
+            this.durationMaskedTextBox.Size = new System.Drawing.Size(134, 23);
+            this.durationMaskedTextBox.TabIndex = 3;
             // 
             // addFilmButton
             // 
-            addFilmButton.Location = new Point(12, 100);
-            addFilmButton.Name = "addFilmButton";
-            addFilmButton.Size = new Size(689, 73);
-            addFilmButton.TabIndex = 4;
-            addFilmButton.Text = "Создать фильм";
-            addFilmButton.UseVisualStyleBackColor = true;
-            addFilmButton.Click += addFilmButton_Click;
+            this.addFilmButton.Location = new System.Drawing.Point(11, 97);
+            this.addFilmButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addFilmButton.Name = "addFilmButton";
+            this.addFilmButton.Size = new System.Drawing.Size(482, 44);
+            this.addFilmButton.TabIndex = 4;
+            this.addFilmButton.Text = "Создать фильм";
+            this.addFilmButton.UseVisualStyleBackColor = true;
             // 
             // errorProvider
             // 
-            errorProvider.ContainerControl = this;
+            this.errorProvider.ContainerControl = this;
             // 
             // AddFilmForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(713, 185);
-            Controls.Add(addFilmButton);
-            Controls.Add(durationMaskedTextBox);
-            Controls.Add(filmNameTextBox);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Name = "AddFilmForm";
-            Text = "Добавление фильма";
-            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(512, 152);
+            this.Controls.Add(this.addFilmButton);
+            this.Controls.Add(this.durationMaskedTextBox);
+            this.Controls.Add(this.filmNameTextBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "AddFilmForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Добавление фильма";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

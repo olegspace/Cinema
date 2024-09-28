@@ -36,6 +36,8 @@ namespace Cinema
             movieName = filmComboBox.Text;
             dateAndTime = sessionStartDateTimePicker.Value;
             hallNumber = hallComboBox.Text;
+            Film f = controller.FindFilm(movieName);
+            duration = f.duration;
 
             if (!ValidateFormData())
             {
@@ -44,7 +46,7 @@ namespace Cinema
 
             minPrice = int.Parse(minPriceMaskedTextBox.Text);
             maxPrice = int.Parse(maxPriceMaskedTextBox.Text);
-            Film f = controller.FindFilm(movieName);
+            //Film f = controller.FindFilm(movieName);
             PricePolicy pp = ChoosePricePolicy();
             if (f != null)
             {

@@ -28,170 +28,187 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            label1 = new Label();
-            label2 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            sessionStartDateTimePicker = new DateTimePicker();
-            minPriceMaskedTextBox = new MaskedTextBox();
-            hallComboBox = new ComboBox();
-            createSessionButton = new Button();
-            filmComboBox = new ComboBox();
-            filmBindingSource = new BindingSource(components);
-            maxPriceMaskedTextBox = new MaskedTextBox();
-            maxPriceLabel = new Label();
-            label3 = new Label();
-            comboBox1 = new ComboBox();
-            ((System.ComponentModel.ISupportInitialize)filmBindingSource).BeginInit();
-            SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.sessionStartDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.minPriceMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.hallComboBox = new System.Windows.Forms.ComboBox();
+            this.createSessionButton = new System.Windows.Forms.Button();
+            this.filmComboBox = new System.Windows.Forms.ComboBox();
+            this.filmBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.maxPriceMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.maxPriceLabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.filmBindingSource)).BeginInit();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 21);
-            label1.Name = "label1";
-            label1.Size = new Size(157, 25);
-            label1.TabIndex = 0;
-            label1.Text = "Название фильма";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Название фильма";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(12, 62);
-            label2.Name = "label2";
-            label2.Size = new Size(174, 25);
-            label2.TabIndex = 1;
-            label2.Text = "Начало кинопоказа";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 41);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(116, 15);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Начало кинопоказа";
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(12, 103);
-            label4.Name = "label4";
-            label4.Size = new Size(229, 25);
-            label4.TabIndex = 3;
-            label4.Text = "Минимальная цена билета";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(8, 65);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(156, 15);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Минимальная цена билета";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(12, 220);
-            label5.Name = "label5";
-            label5.Size = new Size(141, 25);
-            label5.TabIndex = 4;
-            label5.Text = "Зал кинопоказа";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 136);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 15);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Зал кинопоказа";
             // 
             // sessionStartDateTimePicker
             // 
-            sessionStartDateTimePicker.CustomFormat = "dd/MM/yyyy HH:mm";
-            sessionStartDateTimePicker.Format = DateTimePickerFormat.Custom;
-            sessionStartDateTimePicker.Location = new Point(256, 62);
-            sessionStartDateTimePicker.Name = "sessionStartDateTimePicker";
-            sessionStartDateTimePicker.Size = new Size(213, 31);
-            sessionStartDateTimePicker.TabIndex = 6;
+            this.sessionStartDateTimePicker.CustomFormat = "dd/MM/yyyy HH:mm";
+            this.sessionStartDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.sessionStartDateTimePicker.Location = new System.Drawing.Point(179, 33);
+            this.sessionStartDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.sessionStartDateTimePicker.Name = "sessionStartDateTimePicker";
+            this.sessionStartDateTimePicker.Size = new System.Drawing.Size(178, 23);
+            this.sessionStartDateTimePicker.TabIndex = 6;
             // 
             // minPriceMaskedTextBox
             // 
-            minPriceMaskedTextBox.Location = new Point(258, 97);
-            minPriceMaskedTextBox.Mask = "00000";
-            minPriceMaskedTextBox.Name = "minPriceMaskedTextBox";
-            minPriceMaskedTextBox.Size = new Size(213, 31);
-            minPriceMaskedTextBox.TabIndex = 7;
-            minPriceMaskedTextBox.ValidatingType = typeof(int);
+            this.minPriceMaskedTextBox.Location = new System.Drawing.Point(179, 58);
+            this.minPriceMaskedTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.minPriceMaskedTextBox.Mask = "00000";
+            this.minPriceMaskedTextBox.Name = "minPriceMaskedTextBox";
+            this.minPriceMaskedTextBox.Size = new System.Drawing.Size(178, 23);
+            this.minPriceMaskedTextBox.TabIndex = 7;
+            this.minPriceMaskedTextBox.ValidatingType = typeof(int);
             // 
             // hallComboBox
             // 
-            hallComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            hallComboBox.FormattingEnabled = true;
-            hallComboBox.Location = new Point(256, 220);
-            hallComboBox.Name = "hallComboBox";
-            hallComboBox.Size = new Size(213, 33);
-            hallComboBox.TabIndex = 9;
+            this.hallComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.hallComboBox.FormattingEnabled = true;
+            this.hallComboBox.Location = new System.Drawing.Point(179, 134);
+            this.hallComboBox.Margin = new System.Windows.Forms.Padding(2);
+            this.hallComboBox.Name = "hallComboBox";
+            this.hallComboBox.Size = new System.Drawing.Size(178, 23);
+            this.hallComboBox.TabIndex = 9;
             // 
             // createSessionButton
             // 
-            createSessionButton.Location = new Point(12, 270);
-            createSessionButton.Name = "createSessionButton";
-            createSessionButton.Size = new Size(457, 88);
-            createSessionButton.TabIndex = 10;
-            createSessionButton.Text = "Создать кинопоказ";
-            createSessionButton.UseVisualStyleBackColor = true;
-            createSessionButton.Click += button1_Click;
+            this.createSessionButton.Location = new System.Drawing.Point(26, 185);
+            this.createSessionButton.Margin = new System.Windows.Forms.Padding(2);
+            this.createSessionButton.Name = "createSessionButton";
+            this.createSessionButton.Size = new System.Drawing.Size(320, 53);
+            this.createSessionButton.TabIndex = 10;
+            this.createSessionButton.Text = "Создать кинопоказ";
+            this.createSessionButton.UseVisualStyleBackColor = true;
             // 
             // filmComboBox
             // 
-            filmComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            filmComboBox.FormattingEnabled = true;
-            filmComboBox.Location = new Point(256, 13);
-            filmComboBox.Name = "filmComboBox";
-            filmComboBox.Size = new Size(213, 33);
-            filmComboBox.TabIndex = 12;
+            this.filmComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.filmComboBox.FormattingEnabled = true;
+            this.filmComboBox.Location = new System.Drawing.Point(179, 8);
+            this.filmComboBox.Margin = new System.Windows.Forms.Padding(2);
+            this.filmComboBox.Name = "filmComboBox";
+            this.filmComboBox.Size = new System.Drawing.Size(178, 23);
+            this.filmComboBox.TabIndex = 12;
             // 
             // filmBindingSource
             // 
-            filmBindingSource.DataSource = typeof(Film);
+            this.filmBindingSource.DataSource = typeof(Cinema.Film);
             // 
             // maxPriceMaskedTextBox
             // 
-            maxPriceMaskedTextBox.Location = new Point(258, 135);
-            maxPriceMaskedTextBox.Mask = "00000";
-            maxPriceMaskedTextBox.Name = "maxPriceMaskedTextBox";
-            maxPriceMaskedTextBox.Size = new Size(213, 31);
-            maxPriceMaskedTextBox.TabIndex = 14;
-            maxPriceMaskedTextBox.ValidatingType = typeof(int);
+            this.maxPriceMaskedTextBox.Location = new System.Drawing.Point(179, 83);
+            this.maxPriceMaskedTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.maxPriceMaskedTextBox.Mask = "00000";
+            this.maxPriceMaskedTextBox.Name = "maxPriceMaskedTextBox";
+            this.maxPriceMaskedTextBox.Size = new System.Drawing.Size(178, 23);
+            this.maxPriceMaskedTextBox.TabIndex = 14;
+            this.maxPriceMaskedTextBox.ValidatingType = typeof(int);
             // 
             // maxPriceLabel
             // 
-            maxPriceLabel.AutoSize = true;
-            maxPriceLabel.Location = new Point(12, 141);
-            maxPriceLabel.Name = "maxPriceLabel";
-            maxPriceLabel.Size = new Size(235, 25);
-            maxPriceLabel.TabIndex = 13;
-            maxPriceLabel.Text = "Максимальная цена билета";
+            this.maxPriceLabel.AutoSize = true;
+            this.maxPriceLabel.Location = new System.Drawing.Point(8, 89);
+            this.maxPriceLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.maxPriceLabel.Name = "maxPriceLabel";
+            this.maxPriceLabel.Size = new System.Drawing.Size(160, 15);
+            this.maxPriceLabel.TabIndex = 13;
+            this.maxPriceLabel.Text = "Максимальная цена билета";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(12, 181);
-            label3.Name = "label3";
-            label3.Size = new Size(244, 25);
-            label3.TabIndex = 15;
-            label3.Text = "Политика ценообразования";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(8, 114);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(162, 15);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Политика ценообразования";
             // 
             // comboBox1
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Расстояние места до первого ряда", "Близость места к центру" });
-            comboBox1.Location = new Point(258, 173);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(211, 33);
-            comboBox1.TabIndex = 16;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Расстояние места до первого ряда",
+            "Близость места к центру"});
+            this.comboBox1.Location = new System.Drawing.Point(179, 109);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(178, 23);
+            this.comboBox1.TabIndex = 16;
             // 
             // AddSessionForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(483, 364);
-            Controls.Add(comboBox1);
-            Controls.Add(label3);
-            Controls.Add(maxPriceMaskedTextBox);
-            Controls.Add(maxPriceLabel);
-            Controls.Add(filmComboBox);
-            Controls.Add(createSessionButton);
-            Controls.Add(hallComboBox);
-            Controls.Add(minPriceMaskedTextBox);
-            Controls.Add(sessionStartDateTimePicker);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Name = "AddSessionForm";
-            Text = "Новый кинопоказ";
-            ((System.ComponentModel.ISupportInitialize)filmBindingSource).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(380, 249);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.maxPriceMaskedTextBox);
+            this.Controls.Add(this.maxPriceLabel);
+            this.Controls.Add(this.filmComboBox);
+            this.Controls.Add(this.createSessionButton);
+            this.Controls.Add(this.hallComboBox);
+            this.Controls.Add(this.minPriceMaskedTextBox);
+            this.Controls.Add(this.sessionStartDateTimePicker);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "AddSessionForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Новый кинопоказ";
+            ((System.ComponentModel.ISupportInitialize)(this.filmBindingSource)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
