@@ -91,6 +91,7 @@
             this.countineButton.TabIndex = 21;
             this.countineButton.Text = "Продолжить";
             this.countineButton.UseVisualStyleBackColor = true;
+            this.countineButton.Click += new System.EventHandler(this.countineButton_Click);
             // 
             // ChooseHallForm
             // 

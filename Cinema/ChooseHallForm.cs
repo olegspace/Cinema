@@ -14,11 +14,11 @@ namespace Cinema
 {
     public partial class ChooseHallForm : Form
     {
-        private ChooseFilmForm controller;
+        private ChooseFilmController controller;
         private string hallName;
         private string pricePolicy;
         
-        public ChooseHallForm(ChooseFilmForm controller)
+        public ChooseHallForm(ChooseFilmController controller)
         {
             InitializeComponent();
             this.controller = controller;
@@ -38,16 +38,16 @@ namespace Cinema
         {
 
         }
-        private ChooseFilmController filmController;
         private void countineButton_Click(object sender, EventArgs e)
         {
             hallName = hallComboBox.Text;
             pricePolicy = pricePoliceComboBox.Text;
 
-            Hall hall = filmController.GetHallByName(hallName);
+            Hall hall = controller.GetHallByName(hallName);
             PricePolicy pp = ChoosePricePolicy();
-            
 
+            CoefficientForm coefficientForm = new CoefficientForm(hall, pp);
+            coefficientForm.ShowDialog();
         }
 
         private PricePolicy ChoosePricePolicy()

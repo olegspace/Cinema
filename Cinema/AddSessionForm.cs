@@ -29,24 +29,25 @@ namespace Cinema
         int maxPrice;
         TimeSpan duration;
 
-        private void button1_Click(object sender, EventArgs e)
+        private void createSessionButton_Click(object sender, EventArgs e)
         {
 
             // Retrieve entered details
             movieName = filmComboBox.Text;
             dateAndTime = sessionStartDateTimePicker.Value;
             hallNumber = hallComboBox.Text;
-            Film f = controller.FindFilm(movieName);
-            duration = f.duration;
 
             if (!ValidateFormData())
             {
                 return;
-            }
+            }            
 
             minPrice = int.Parse(minPriceMaskedTextBox.Text);
             maxPrice = int.Parse(maxPriceMaskedTextBox.Text);
-            //Film f = controller.FindFilm(movieName);
+
+            Film f = controller.FindFilm(movieName);
+            duration = f.duration;
+
             PricePolicy pp = ChoosePricePolicy();
             if (f != null)
             {
@@ -55,7 +56,7 @@ namespace Cinema
             }
             else 
             {
-                MessageBox.Show("невозможно найти фильм с навзанием " + movieName, "Ошибка данных");
+                MessageBox.Show("Невозможно найти фильм с навзанием " + movieName, "Ошибка данных");
             }
 
             // Close the form
@@ -163,5 +164,6 @@ namespace Cinema
 
             return false;
         }
+
     }
 }

@@ -125,6 +125,7 @@
             this.createSessionButton.TabIndex = 10;
             this.createSessionButton.Text = "Создать кинопоказ";
             this.createSessionButton.UseVisualStyleBackColor = true;
+            this.createSessionButton.Click += new System.EventHandler(this.createSessionButton_Click);
             // 
             // filmComboBox
             // 

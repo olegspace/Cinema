@@ -501,7 +501,7 @@ namespace CinemaApp
 
         private void settingHallButton_Click(object sender, EventArgs e)
         {
-            ChooseHallForm chooseHallForm = new ChooseHallForm(this);
+            ChooseHallForm chooseHallForm = new ChooseHallForm(controller);
             chooseHallForm.ShowDialog();
         }
     }
