@@ -9,6 +9,7 @@ using System.Xml.Linq;
 
 namespace Cinema
 {
+    [Serializable]
     public class FilmSession
     {
         private static int idGenerator = 0;
@@ -51,6 +52,11 @@ namespace Cinema
             pricePolicy = pp;
         }
 
+        public FilmSession(int id, Hall hall)
+        {
+            Id = id;
+            Hall = hall;
+        }
         public int getRevenue() 
         {
             return Revenue;

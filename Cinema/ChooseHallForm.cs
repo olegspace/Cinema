@@ -48,15 +48,16 @@ namespace Cinema
 
             CoefficientForm coefficientForm = new CoefficientForm(hall, pp);
             coefficientForm.ShowDialog();
+            Close();
         }
 
         private PricePolicy ChoosePricePolicy()
         {
-            if (pricePoliceComboBox.Text == "Расстояние места до первого ряда")
+            if (pricePolicy == "Расстояние места до первого ряда")
             {
                 return new LinearPricePolicy();
             }
-            else if (pricePoliceComboBox.Text == "Близость места к центру")
+            else if (pricePolicy == "Близость места к центру")
             {
                 return new CenterPricePolicy();
             }

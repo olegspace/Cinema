@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,9 +21,10 @@ namespace Cinema
         private int rows;  // Количество рядов в зале
         private int cols;  // Количество мест в ряду
 
-        public CoefficientForm(Hall hall, PricePolicy pricePolicy_)
+        public CoefficientForm(Hall hall_, PricePolicy pricePolicy_)
         {
             InitializeComponent();
+            hall = hall_;
             pricePolicy = pricePolicy_;
             if (pricePolicy is LinearPricePolicy)
             {
@@ -75,19 +77,61 @@ namespace Cinema
                 }
             }
         }
+        public void SaveHallWithCoefficients(Hall hall)
+        {
+            // Преобразуем зал в JSON, включая коэффициенты
+            string hallJson = JsonConvert.SerializeObject(hall);
+
+            // Путь для сохранения файла (например, "hall_coefficients.json")
+            string filePath = $"{hall.Name}_coefficients.json";
+
+            // Сохраняем JSON в файл
+            File.WriteAllText(filePath, hallJson);
+
+            MessageBox.Show("Коэффициенты зала успешно сохранены!");
+        }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
             // Сохранение введённых коэффициентов
-            for (int i = 0; i < coefficients.Count(); i++)
+            //for (int i = 0; i < coefficients.Count(); i++)
+            //{
+            //    for (int j = 0; j < coefficients[0].Count(); j++)
+            //    {
+            //        coefficients[i][j] = Convert.ToDouble(PlacesDataGridView[j, i].Value);
+            //    }
+            //}
+
+            //DialogResult = DialogResult.OK;
+            //Close();
+
+            for (int row = 0; row < PlacesDataGridView.RowCount; row++)
             {
-                for (int j = 0; j < coefficients[0].Count(); j++)
+                List<double> rowCoefficients = new List<double>();
+
+                for (int col = 0; col < PlacesDataGridView.ColumnCount; col++)
                 {
-                    coefficients[i][j] = Convert.ToDouble(PlacesDataGridView[j, i].Value);
+                    double coefficient = Convert.ToDouble(PlacesDataGridView.Rows[row].Cells[col].Value);
+                    rowCoefficients.Add(coefficient);
                 }
+
+                coefficients.Add(rowCoefficients);
             }
 
-            this.DialogResult = DialogResult.OK;
+            // Сохраняем коэффициенты для выбранной политики
+            if (pricePolicy is LinearPricePolicy)
+            {
+                hall.SetLinearCoefficients(coefficients);
+            }
+            else if (pricePolicy is CenterPricePolicy)
+            {
+                hall.SetCenterCoefficients(coefficients);
+            }
+
+            // Сохраняем зал с коэффициентами в JSON
+            SaveHallWithCoefficients(hall);
+
+            MessageBox.Show("Коэффициенты сохранены!");
             Close();
         }
     }

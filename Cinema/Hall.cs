@@ -1,8 +1,10 @@
 ﻿
+using Newtonsoft.Json;
 using System.Security.Cryptography;
 
 namespace Cinema
 {
+    [Serializable]
     public class Hall
     {
         private int width;
@@ -95,13 +97,54 @@ namespace Cinema
 
         public string Name { get => name; }
         public List<List<bool>> Places { get => places; set => places = value; }
+        public void SetLinearCoefficients(List<List<double>> coefficients)
+        {
+            linearCoefficients = coefficients;
+        }
+
+        public void SetCenterCoefficients(List<List<double>> coefficients)
+        {
+            centerCoefficients = coefficients;
+        }
 
         public List<List<double>> GetLinearCoefficients() => linearCoefficients;
         public List<List<double>> GetCenterCoefficients() => centerCoefficients;
+        public List<List<double>> GetCoefficients(PricePolicy pricePolicy)
+        {
+            if (pricePolicy is LinearPricePolicy)
+            {
+                return linearCoefficients; // Для политики "Расстояние до первого ряда"
+            }
+            else if (pricePolicy is CenterPricePolicy)
+            {
+                return centerCoefficients; // Для политики "Близость к центру"
+            }
+            else
+            {
+                throw new ArgumentException("Неизвестная политика ценообразования");
+            }
+        }
+        public string SerializeCoefficientsToJson()
+        {
+            var coefficientsData = new
+            {
+                LinearCoefficients = linearCoefficients,
+                CenterCoefficients = centerCoefficients
+            };
 
+            return JsonConvert.SerializeObject(coefficientsData);
+        }
+
+        // Метод для загрузки коэффициентов из JSON
+        public void DeserializeCoefficientsFromJson(string json)
+        {
+            var coefficientsData = JsonConvert.DeserializeObject<Dictionary<string, List<List<double>>>>(json);
+            linearCoefficients = coefficientsData["LinearCoefficients"];
+            centerCoefficients = coefficientsData["CenterCoefficients"];
+        }
         public override string ToString()
         {
             return name;
         }
-    }
+    }    
 }
