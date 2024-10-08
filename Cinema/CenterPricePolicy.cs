@@ -4,7 +4,7 @@ namespace Cinema
 {
     internal class CenterPricePolicy : PricePolicy
     {
-        public int CalculatePrice(int minPrice, int maxPrice, Point position, Hall hall)
+        public int CalculatePriceDefoult(int minPrice, int maxPrice, Point position, Hall hall)
         {
             int center = (hall.Height % 2 == 0) ? hall.Height / 2 - 1: hall.Height / 2;
 
@@ -16,7 +16,7 @@ namespace Cinema
             double val = minPrice + (maxPrice - minPrice) * (double)distanceToEdge / ((double)center);
             return (int)Math.Floor(val);
         }
-        public int CalculatePriceWithCoefficients(int minPrice, int maxPrice, Point position, Hall hall)
+        public int CalculatePrice(int minPrice, int maxPrice, Point position, Hall hall)
         {
             List<List<double>> coefficients = hall.GetCoefficients(this);
             double coefficient = coefficients[position.Y][position.X];  // Получаем коэффициент для места

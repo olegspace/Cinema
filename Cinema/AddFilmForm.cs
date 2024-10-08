@@ -64,7 +64,7 @@ namespace Cinema
             string name = filmNameTextBox.Text;
             TimeSpan duration = TimeSpan.Parse(durationMaskedTextBox.Text);
             parent.AddFilm(name, duration);
-            this.Close();
+            Close();
         }
     }
 }

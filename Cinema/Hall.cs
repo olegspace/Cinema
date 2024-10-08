@@ -52,6 +52,32 @@ namespace Cinema
 
         private void InitializeCoefficients(int width, int height)
         {
+            // Загружаем коэффициенты из JSON, если они существуют
+            string filePath = $"{this.Name}_coefficients.json";
+
+            if (File.Exists(filePath))
+            {
+                try
+                {
+                    // Читаем JSON-файл
+                    string json = File.ReadAllText(filePath);
+                    var hallCoefficients = JsonConvert.DeserializeObject<HallCoefficients>(json);
+
+                    if (hallCoefficients != null && hallCoefficients.LinearCoefficients != null && hallCoefficients.CenterCoefficients != null)
+                    {
+                        // Если данные найдены, подгружаем коэффициенты
+                        linearCoefficients = hallCoefficients.LinearCoefficients;
+                        centerCoefficients = hallCoefficients.CenterCoefficients;
+
+                        return; // Завершаем метод, так как данные успешно загружены
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при загрузке коэффициентов из файла: {ex.Message}");
+                }
+            }
+
             linearCoefficients = new List<List<double>>(height);
             centerCoefficients = new List<List<double>>(height);
 

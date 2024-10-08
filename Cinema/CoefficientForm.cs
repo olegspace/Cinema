@@ -25,7 +25,9 @@ namespace Cinema
         {
             InitializeComponent();
             hall = hall_;
+            Text = "Зал " + hall.Name;
             pricePolicy = pricePolicy_;
+            PlacesDataGridView.Rows.Clear();
             if (pricePolicy is LinearPricePolicy)
             {
                 coefficients = hall.GetLinearCoefficients();
@@ -79,14 +81,15 @@ namespace Cinema
         }
         public void SaveHallWithCoefficients(Hall hall)
         {
+            HallCoefficients hallCoefficients  = new HallCoefficients(hall.GetLinearCoefficients(), hall.GetCenterCoefficients());
             // Преобразуем зал в JSON, включая коэффициенты
-            string hallJson = JsonConvert.SerializeObject(hall);
+            string hallCoefficientsJson = JsonConvert.SerializeObject(hallCoefficients);
 
             // Путь для сохранения файла (например, "hall_coefficients.json")
             string filePath = $"{hall.Name}_coefficients.json";
 
             // Сохраняем JSON в файл
-            File.WriteAllText(filePath, hallJson);
+            File.WriteAllText(filePath, hallCoefficientsJson);
 
             MessageBox.Show("Коэффициенты зала успешно сохранены!");
         }
@@ -107,15 +110,13 @@ namespace Cinema
 
             for (int row = 0; row < PlacesDataGridView.RowCount; row++)
             {
-                List<double> rowCoefficients = new List<double>();
+                
 
                 for (int col = 0; col < PlacesDataGridView.ColumnCount; col++)
                 {
                     double coefficient = Convert.ToDouble(PlacesDataGridView.Rows[row].Cells[col].Value);
-                    rowCoefficients.Add(coefficient);
+                    coefficients[row][col] = coefficient;
                 }
-
-                coefficients.Add(rowCoefficients);
             }
 
             // Сохраняем коэффициенты для выбранной политики
@@ -131,7 +132,6 @@ namespace Cinema
             // Сохраняем зал с коэффициентами в JSON
             SaveHallWithCoefficients(hall);
 
-            MessageBox.Show("Коэффициенты сохранены!");
             Close();
         }
     }

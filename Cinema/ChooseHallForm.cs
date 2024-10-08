@@ -40,6 +40,11 @@ namespace Cinema
         }
         private void countineButton_Click(object sender, EventArgs e)
         {
+            if (!ValidateFormData())
+            {
+                return;
+            }
+
             hallName = hallComboBox.Text;
             pricePolicy = pricePoliceComboBox.Text;
 
@@ -63,6 +68,23 @@ namespace Cinema
             }
 
             throw new Exception("Указанная политика ценообразования не может быть обработана");
+        }
+
+        private bool ValidateFormData()
+        {
+
+            if (string.IsNullOrWhiteSpace(hallComboBox.Text))
+            {
+                MessageBox.Show("Поле с номером зала кинопоказа не может быть пустым");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(pricePoliceComboBox.Text))
+            {
+                MessageBox.Show("Поле с политикой ценообразования не может быть пустым");
+                return false;
+            }
+            return true;
         }
     }
 }
