@@ -6,6 +6,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace Cinema
 {
@@ -50,6 +51,17 @@ namespace Cinema
             this.minPrice = minPrice;
             this.maxPrice = maxPrice;
             pricePolicy = pp;
+        }
+
+        [JsonConstructor]
+        public FilmSession(int id, Film film_, Hall hall, DateTime dataTime, int minPrice, int maxPrice)
+        {
+            Id = id;
+            film = film_;
+            Hall = hall;
+            Date = dataTime;
+            MinPrice = minPrice;
+            MaxPrice = maxPrice;
         }
 
         public FilmSession(int id, Hall hall)
