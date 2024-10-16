@@ -62,9 +62,33 @@ namespace Cinema
         private void addFilmButton_Click(object sender, EventArgs e)
         {
             string name = filmNameTextBox.Text;
+
+            if (durationMaskedTextBox.Text == "  :")
+            {
+                MessageBox.Show("Заполните продолжительность фильма");
+                return;
+            }
+
             TimeSpan duration = TimeSpan.Parse(durationMaskedTextBox.Text);
+            if (!ValidationFilmDuration(duration))
+            {
+                MessageBox.Show("Продолжительность фильма должна быть больше нуля");
+                return;
+            }
             parent.AddFilm(name, duration);
             Close();
+        }
+
+        private bool ValidationFilmDuration(TimeSpan duration)
+        {
+            TimeSpan nullTimeSpan = TimeSpan.Zero;
+
+
+            if (duration > TimeSpan.Zero)
+            {
+                return true;
+            }
+            else return false;
         }
     }
 }

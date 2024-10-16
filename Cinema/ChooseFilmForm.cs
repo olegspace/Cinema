@@ -400,6 +400,13 @@ namespace CinemaApp
             UpdateDataGrid();
         }
 
+        public void AddFilmSession(Film film, DateTime dateAndTime, string hallNumber, int basePrice, PricePolicy pp)
+        {
+            FilmSession newFs = new FilmSession(film, controller.GetHallByName(hallNumber), dateAndTime, basePrice, pp);
+            controller.AddFilmSession(newFs);
+            UpdateDataGrid();
+        }
+
         public IEnumerable<FilmSessionController> GetFilmSessions()
         {
             return controller.GetFilmSessionControllers();

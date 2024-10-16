@@ -43,6 +43,7 @@
             this.PlacesDataGridView.RowTemplate.Height = 25;
             this.PlacesDataGridView.Size = new System.Drawing.Size(906, 464);
             this.PlacesDataGridView.TabIndex = 0;
+            this.PlacesDataGridView.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.PlacesDataGridView_EditingControlShowing);
             // 
             // saveButton
             // 

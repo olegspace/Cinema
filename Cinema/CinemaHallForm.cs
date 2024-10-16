@@ -64,9 +64,9 @@ public class CinemaHallForm : Form
             layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100f / rows));
         }
 
-        for (int col = 0; col < cols; col++)
+        for (int row = 0; row < rows; row++)
         {
-            for (int row = 0; row < rows; row++)
+            for (int col = 0; col < cols; col++)
             {
                 Point pos = new Point(row, col);
                 PlaceOfCinemaHall toggleButton = new PlaceOfCinemaHall(pos, controller.IsPlaced(pos), controller.GetPrice(pos));

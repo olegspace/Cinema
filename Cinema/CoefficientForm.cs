@@ -134,5 +134,44 @@ namespace Cinema
 
             Close();
         }
+
+        private void PlacesDataGridView_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (PlacesDataGridView.CurrentCell.ColumnIndex > 0)
+            {
+                TextBox txt = e.Control as TextBox;
+                if (txt != null)
+                {
+                    // Удаляем предыдущие обработчики события, чтобы избежать дублирования
+                    txt.KeyPress -= new KeyPressEventHandler(txt_KeyPress);
+                    // Добавляем новый обработчик события KeyPress
+                    txt.KeyPress += new KeyPressEventHandler(txt_KeyPress);
+                }
+            }
+        }
+        private void txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox txt = sender as TextBox;
+
+            // Разрешаем цифры, запятую, и управляющие символы (например, Backspace)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
+            {
+                e.Handled = true;
+            }
+
+            // Разрешаем только одну запятую в числе
+            if (e.KeyChar == ',' && txt.Text.Contains(","))
+            {
+                e.Handled = true;
+            }
+
+            // Запрещаем ввод отрицательных чисел
+            if (e.KeyChar == '-' || (txt.Text == "" && e.KeyChar == '0' && txt.SelectionStart == 0 && txt.SelectionLength == 0))
+            {
+                e.Handled = true;
+            }
+
+
+        }
     }
 }

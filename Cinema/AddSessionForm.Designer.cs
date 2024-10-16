@@ -43,7 +43,10 @@
             this.maxPriceLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.basePriceNUD = new System.Windows.Forms.NumericUpDown();
+            this.basePricelabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.filmBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.basePriceNUD)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -59,7 +62,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 41);
+            this.label2.Location = new System.Drawing.Point(8, 38);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 15);
@@ -69,7 +72,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 65);
+            this.label4.Location = new System.Drawing.Point(8, 100);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(156, 15);
@@ -79,7 +82,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 136);
+            this.label5.Location = new System.Drawing.Point(8, 171);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 15);
@@ -90,7 +93,7 @@
             // 
             this.sessionStartDateTimePicker.CustomFormat = "dd/MM/yyyy HH:mm";
             this.sessionStartDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.sessionStartDateTimePicker.Location = new System.Drawing.Point(179, 33);
+            this.sessionStartDateTimePicker.Location = new System.Drawing.Point(179, 35);
             this.sessionStartDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.sessionStartDateTimePicker.Name = "sessionStartDateTimePicker";
             this.sessionStartDateTimePicker.Size = new System.Drawing.Size(178, 23);
@@ -98,7 +101,8 @@
             // 
             // minPriceMaskedTextBox
             // 
-            this.minPriceMaskedTextBox.Location = new System.Drawing.Point(179, 58);
+            this.minPriceMaskedTextBox.Enabled = false;
+            this.minPriceMaskedTextBox.Location = new System.Drawing.Point(179, 93);
             this.minPriceMaskedTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.minPriceMaskedTextBox.Mask = "00000";
             this.minPriceMaskedTextBox.Name = "minPriceMaskedTextBox";
@@ -110,7 +114,7 @@
             // 
             this.hallComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.hallComboBox.FormattingEnabled = true;
-            this.hallComboBox.Location = new System.Drawing.Point(179, 134);
+            this.hallComboBox.Location = new System.Drawing.Point(179, 169);
             this.hallComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.hallComboBox.Name = "hallComboBox";
             this.hallComboBox.Size = new System.Drawing.Size(178, 23);
@@ -118,7 +122,7 @@
             // 
             // createSessionButton
             // 
-            this.createSessionButton.Location = new System.Drawing.Point(26, 185);
+            this.createSessionButton.Location = new System.Drawing.Point(26, 214);
             this.createSessionButton.Margin = new System.Windows.Forms.Padding(2);
             this.createSessionButton.Name = "createSessionButton";
             this.createSessionButton.Size = new System.Drawing.Size(320, 53);
@@ -143,7 +147,8 @@
             // 
             // maxPriceMaskedTextBox
             // 
-            this.maxPriceMaskedTextBox.Location = new System.Drawing.Point(179, 83);
+            this.maxPriceMaskedTextBox.Enabled = false;
+            this.maxPriceMaskedTextBox.Location = new System.Drawing.Point(179, 118);
             this.maxPriceMaskedTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.maxPriceMaskedTextBox.Mask = "00000";
             this.maxPriceMaskedTextBox.Name = "maxPriceMaskedTextBox";
@@ -154,7 +159,7 @@
             // maxPriceLabel
             // 
             this.maxPriceLabel.AutoSize = true;
-            this.maxPriceLabel.Location = new System.Drawing.Point(8, 89);
+            this.maxPriceLabel.Location = new System.Drawing.Point(8, 124);
             this.maxPriceLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.maxPriceLabel.Name = "maxPriceLabel";
             this.maxPriceLabel.Size = new System.Drawing.Size(160, 15);
@@ -164,7 +169,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 114);
+            this.label3.Location = new System.Drawing.Point(8, 149);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(162, 15);
@@ -178,17 +183,56 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Расстояние места до первого ряда",
             "Близость места к центру"});
-            this.comboBox1.Location = new System.Drawing.Point(179, 109);
+            this.comboBox1.Location = new System.Drawing.Point(179, 144);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(178, 23);
             this.comboBox1.TabIndex = 16;
             // 
+            // basePriceNUD
+            // 
+            this.basePriceNUD.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.basePriceNUD.Location = new System.Drawing.Point(179, 63);
+            this.basePriceNUD.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.basePriceNUD.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.basePriceNUD.Name = "basePriceNUD";
+            this.basePriceNUD.Size = new System.Drawing.Size(120, 23);
+            this.basePriceNUD.TabIndex = 17;
+            this.basePriceNUD.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
+            // basePricelabel
+            // 
+            this.basePricelabel.AutoSize = true;
+            this.basePricelabel.Location = new System.Drawing.Point(8, 64);
+            this.basePricelabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.basePricelabel.Name = "basePricelabel";
+            this.basePricelabel.Size = new System.Drawing.Size(120, 15);
+            this.basePricelabel.TabIndex = 18;
+            this.basePricelabel.Text = "Базовая цена билета";
+            // 
             // AddSessionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 249);
+            this.ClientSize = new System.Drawing.Size(390, 278);
+            this.Controls.Add(this.basePricelabel);
+            this.Controls.Add(this.basePriceNUD);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.maxPriceMaskedTextBox);
@@ -207,6 +251,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Новый кинопоказ";
             ((System.ComponentModel.ISupportInitialize)(this.filmBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.basePriceNUD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,5 +273,7 @@
         private Label maxPriceLabel;
         private Label label3;
         private ComboBox comboBox1;
+        private NumericUpDown basePriceNUD;
+        private Label basePricelabel;
     }
 }

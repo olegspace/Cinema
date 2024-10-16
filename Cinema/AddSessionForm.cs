@@ -6,6 +6,14 @@ namespace Cinema
     public partial class AddSessionForm : Form
     {
         private ChooseFilmForm controller;
+        string movieName;
+        DateTime dateAndTime;
+        string hallNumber;
+        int minPrice;
+        int maxPrice;
+        int basePrice;
+        TimeSpan duration;
+
         public AddSessionForm(ChooseFilmForm controller)
         {
             InitializeComponent();
@@ -20,14 +28,7 @@ namespace Cinema
             {
                 filmComboBox.Items.Add(f.name);
             }
-        }
-
-        string movieName;
-        DateTime dateAndTime;
-        string hallNumber;
-        int minPrice;
-        int maxPrice;
-        TimeSpan duration;
+        }        
 
         private void createSessionButton_Click(object sender, EventArgs e)
         {
@@ -42,8 +43,9 @@ namespace Cinema
                 return;
             }            
 
-            minPrice = int.Parse(minPriceMaskedTextBox.Text);
-            maxPrice = int.Parse(maxPriceMaskedTextBox.Text);
+            basePrice = (int)basePriceNUD.Value;
+            //minPrice = int.Parse(minPriceMaskedTextBox.Text);
+            //minPrice = int.Parse(minPriceMaskedTextBox.Text);
 
             Film f = controller.FindFilm(movieName);
             duration = f.duration;
@@ -52,7 +54,8 @@ namespace Cinema
             if (f != null)
             {
                 // Add a new film session to the controller
-                controller.AddFilmSession(f, dateAndTime, hallNumber, minPrice, maxPrice,  pp);
+                // controller.AddFilmSession(f, dateAndTime, hallNumber, minPrice, maxPrice, pp);
+                controller.AddFilmSession(f, dateAndTime, hallNumber, basePrice, pp);
             }
             else 
             {
@@ -86,21 +89,21 @@ namespace Cinema
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(minPriceMaskedTextBox.Text))
-            {
-                MessageBox.Show("Поле с минимальной ценой билета не может быть пустым");
-                return false;
-            }
+            //if (string.IsNullOrWhiteSpace(minPriceMaskedTextBox.Text))
+            //{
+            //    MessageBox.Show("Поле с минимальной ценой билета не может быть пустым");
+            //    return false;
+            //}
+
+            //if (string.IsNullOrWhiteSpace(maxPriceMaskedTextBox.Text))
+            //{
+            //    MessageBox.Show("Поле с максимальной ценой билета не может быть пустым");
+            //    return false;
+            //}
 
             if (string.IsNullOrWhiteSpace(comboBox1.Text))
             {
                 MessageBox.Show("Поле с политикой ценообразования не может быть пустым");
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(maxPriceMaskedTextBox.Text))
-            {
-                MessageBox.Show("Поле с максимальной ценой билета не может быть пустым");
                 return false;
             }
 
@@ -118,8 +121,9 @@ namespace Cinema
 
             try
             {
-                minPrice = int.Parse(minPriceMaskedTextBox.Text);
-                maxPrice = int.Parse(maxPriceMaskedTextBox.Text);
+                basePrice = (int)basePriceNUD.Value;
+                //minPrice = int.Parse(minPriceMaskedTextBox.Text);
+                //maxPrice = int.Parse(maxPriceMaskedTextBox.Text);
             }
             catch
             {
@@ -127,11 +131,11 @@ namespace Cinema
                 return false;
             }
           
-            if (minPrice > maxPrice)
-            {
-                MessageBox.Show("Минимальная цена должна быть меньше максимальной");
-                return false;
-            }
+            //if (minPrice > maxPrice)
+            //{
+            //    MessageBox.Show("Минимальная цена должна быть меньше максимальной");
+            //    return false;
+            //}
 
             if (IsSessionHasTimeCollision())
             {

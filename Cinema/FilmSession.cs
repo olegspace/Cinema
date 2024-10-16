@@ -26,6 +26,7 @@ namespace Cinema
 
         private Hall hall;
         private DateTime date;
+        private int basePrice;
         private int minPrice;
         private int maxPrice;
 
@@ -38,6 +39,7 @@ namespace Cinema
         public DateTime Date { get => date; set => date = value; }
         public int MinPrice { get => minPrice; set => minPrice = value; }
         public int MaxPrice { get => maxPrice; set => maxPrice = value; }
+        public int BasePrice { get => basePrice; set => basePrice = value; }
         public int Id { get => id; set => id = value; }
         public TimeSpan Duration { get => film.duration; } 
 
@@ -48,12 +50,25 @@ namespace Cinema
             this.Hall = hall;
             this.Date = date;
             Revenue = 0;
+            this.basePrice = minPrice;
             this.minPrice = minPrice;
             this.maxPrice = maxPrice;
             pricePolicy = pp;
         }
 
-        [JsonConstructor]
+        public FilmSession(Film film, Hall hall, DateTime date, int basePrice, PricePolicy pp)
+        {
+            this.film = film;
+            this.Id = idGenerator++;
+            this.Hall = hall;
+            this.Date = date;
+            Revenue = 0;
+            this.basePrice = minPrice;
+            minPrice = basePrice;
+            pricePolicy = pp;
+        }
+
+        // [JsonConstructor]
         public FilmSession(int id, Film film_, Hall hall, DateTime dataTime, int minPrice, int maxPrice)
         {
             Id = id;
@@ -62,6 +77,16 @@ namespace Cinema
             Date = dataTime;
             MinPrice = minPrice;
             MaxPrice = maxPrice;
+        }
+
+        [JsonConstructor]
+        public FilmSession(int id, Film film_, Hall hall, DateTime dataTime, int basePrice)
+        {
+            Id = id;
+            film = film_;
+            Hall = hall;
+            Date = dataTime;
+            BasePrice = basePrice;
         }
 
         public FilmSession(int id, Hall hall)
