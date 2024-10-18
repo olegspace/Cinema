@@ -168,6 +168,25 @@ namespace Cinema
             linearCoefficients = coefficientsData["LinearCoefficients"];
             centerCoefficients = coefficientsData["CenterCoefficients"];
         }
+
+        public Hall Clone()
+        {
+            // Клонируем зал, создавая новый объект с теми же параметрами
+            Hall clonedHall = new Hall(width, height, name);
+
+            // Клонируем состояние мест
+            clonedHall.Places = new List<List<bool>>();
+            foreach (var row in this.Places)
+            {
+                clonedHall.Places.Add(new List<bool>(row));
+            }
+
+            // Клонируем коэффициенты
+            clonedHall.SetLinearCoefficients(this.linearCoefficients.Select(row => new List<double>(row)).ToList());
+            clonedHall.SetCenterCoefficients(this.centerCoefficients.Select(row => new List<double>(row)).ToList());
+
+            return clonedHall;
+        }
         public override string ToString()
         {
             return name;

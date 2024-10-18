@@ -96,17 +96,6 @@ namespace Cinema
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            // Сохранение введённых коэффициентов
-            //for (int i = 0; i < coefficients.Count(); i++)
-            //{
-            //    for (int j = 0; j < coefficients[0].Count(); j++)
-            //    {
-            //        coefficients[i][j] = Convert.ToDouble(PlacesDataGridView[j, i].Value);
-            //    }
-            //}
-
-            //DialogResult = DialogResult.OK;
-            //Close();
 
             for (int row = 0; row < PlacesDataGridView.RowCount; row++)
             {
@@ -170,8 +159,6 @@ namespace Cinema
             {
                 e.Handled = true;
             }
-
-
         }
     }
 }

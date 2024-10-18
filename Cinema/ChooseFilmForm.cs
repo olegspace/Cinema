@@ -402,7 +402,13 @@ namespace CinemaApp
 
         public void AddFilmSession(Film film, DateTime dateAndTime, string hallNumber, int basePrice, PricePolicy pp)
         {
-            FilmSession newFs = new FilmSession(film, controller.GetHallByName(hallNumber), dateAndTime, basePrice, pp);
+            // Клонируем зал для нового кинопоказа
+            Hall originalHall = controller.GetHallByName(hallNumber);
+            Hall clonedHall = originalHall.Clone();
+
+            FilmSession newFs = new FilmSession(film, clonedHall, dateAndTime, basePrice, pp);
+
+            //FilmSession newFs = new FilmSession(film, controller.GetHallByName(hallNumber), dateAndTime, basePrice, pp);
             controller.AddFilmSession(newFs);
             UpdateDataGrid();
         }
