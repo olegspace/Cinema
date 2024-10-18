@@ -408,7 +408,6 @@ namespace CinemaApp
 
             FilmSession newFs = new FilmSession(film, clonedHall, dateAndTime, basePrice, pp);
 
-            //FilmSession newFs = new FilmSession(film, controller.GetHallByName(hallNumber), dateAndTime, basePrice, pp);
             controller.AddFilmSession(newFs);
             UpdateDataGrid();
         }

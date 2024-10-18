@@ -22,7 +22,7 @@ public class FilmSessionController : IFilmSessionController
 
     public int GetPrice(Point pos)
     {
-        return pricePolicy.CalculatePrice(fs.GetMinPrice(), fs.GetMaxPrice(), pos, fs.GetHall());
+        return pricePolicy.CalculatePrice(fs.GetMinPrice(), pos, fs.GetHall());
     }
 
     public int GetRevenue()

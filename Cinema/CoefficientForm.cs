@@ -126,17 +126,15 @@ namespace Cinema
 
         private void PlacesDataGridView_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            if (PlacesDataGridView.CurrentCell.ColumnIndex > 0)
+            TextBox txt = e.Control as TextBox;
+            if (txt != null)
             {
-                TextBox txt = e.Control as TextBox;
-                if (txt != null)
-                {
-                    // Удаляем предыдущие обработчики события, чтобы избежать дублирования
-                    txt.KeyPress -= new KeyPressEventHandler(txt_KeyPress);
-                    // Добавляем новый обработчик события KeyPress
-                    txt.KeyPress += new KeyPressEventHandler(txt_KeyPress);
-                }
+                // Удаляем предыдущие обработчики события, чтобы избежать дублирования
+                txt.KeyPress -= new KeyPressEventHandler(txt_KeyPress);
+                // Добавляем новый обработчик события KeyPress
+                txt.KeyPress += new KeyPressEventHandler(txt_KeyPress);
             }
+
         }
         private void txt_KeyPress(object sender, KeyPressEventArgs e)
         {
